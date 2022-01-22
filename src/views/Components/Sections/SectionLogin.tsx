@@ -1,11 +1,11 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
-import People from "@material-ui/icons/People";
-import Email from "@material-ui/icons/Email";
+// @mui/material components
+import useClasses from "../../../hooks/useClasses";
+import InputAdornment from "@mui/material/InputAdornment";
+import Icon from "@mui/material/Icon";
+// @mui/icons-material
+import People from "@mui/icons-material/People";
+import Email from "@mui/icons-material/Email";
 // core components
 import GridContainer from "../../../components/Grid/GridContainer";
 import GridItem from "../../../components/Grid/GridItem";
@@ -18,20 +18,20 @@ import CustomInput from "../../../components/CustomInput/CustomInput";
 
 import styles from "../../../assets/jss/material-kit-react/views/componentsSections/loginStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function SectionLogin() {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   return (
-    <div className={classes.section}>
-      <div className={classes.container}>
+    <div className={(classes as any).section}>
+      <div className={(classes as any).container}>
         <GridContainer justifyContent="center">
           <GridItem xs={12} sm={12} md={4}>
             <Card>
-              <form className={classes.form}>
-                <CardHeader color="primary" className={classes.cardHeader}>
+              <form className={(classes as any).form}>
+                <CardHeader color="primary" className={(classes as any).cardHeader}>
                   <h4>Login</h4>
-                  <div className={classes.socialLine}>
+                  <div className={(classes as any).socialLine}>
                     <Button
                       justIcon
                       href="#pablo"
@@ -39,7 +39,7 @@ export default function SectionLogin() {
                       color="transparent"
                       onClick={(e: any) => e.preventDefault()}
                     >
-                      <i className={classes.socialIcons + " fab fa-twitter"} />
+                      <i className={(classes as any).socialIcons + " fab fa-twitter"} />
                     </Button>
                     <Button
                       justIcon
@@ -48,7 +48,7 @@ export default function SectionLogin() {
                       color="transparent"
                       onClick={(e: any) => e.preventDefault()}
                     >
-                      <i className={classes.socialIcons + " fab fa-facebook"} />
+                      <i className={(classes as any).socialIcons + " fab fa-facebook"} />
                     </Button>
                     <Button
                       justIcon
@@ -59,13 +59,13 @@ export default function SectionLogin() {
                     >
                       <i
                         className={
-                          classes.socialIcons + " fab fa-google-plus-g"
+                          (classes as any).socialIcons + " fab fa-google-plus-g"
                         }
                       />
                     </Button>
                   </div>
                 </CardHeader>
-                <p className={classes.divider}>Or Be Classical</p>
+                <p className={(classes as any).divider}>Or Be Classical</p>
                 <CardBody>
                   <CustomInput
                     labelText="First Name..."
@@ -77,7 +77,7 @@ export default function SectionLogin() {
                       type: "text",
                       endAdornment: (
                         <InputAdornment position="end">
-                          <People className={classes.inputIconsColor} />
+                          <People className={(classes as any).inputIconsColor} />
                         </InputAdornment>
                       )
                     }}
@@ -92,7 +92,7 @@ export default function SectionLogin() {
                       type: "email",
                       endAdornment: (
                         <InputAdornment position="end">
-                          <Email className={classes.inputIconsColor} />
+                          <Email className={(classes as any).inputIconsColor} />
                         </InputAdornment>
                       )
                     }}
@@ -107,7 +107,7 @@ export default function SectionLogin() {
                       type: "password",
                       endAdornment: (
                         <InputAdornment position="end">
-                          <Icon className={classes.inputIconsColor}>
+                          <Icon className={(classes as any).inputIconsColor}>
                             lock_outline
                           </Icon>
                         </InputAdornment>
@@ -116,7 +116,7 @@ export default function SectionLogin() {
                     }}
                   />
                 </CardBody>
-                <CardFooter className={classes.cardFooter}>
+                <CardFooter className={(classes as any).cardFooter}>
                   <Button simple color="primary" size="lg">
                     Get started
                   </Button>

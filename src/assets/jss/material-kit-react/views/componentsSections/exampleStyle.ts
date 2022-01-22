@@ -1,9 +1,9 @@
 import { containerFluid } from "../../../material-kit-react";
 
 import imagesStyle from "../../imagesStyles";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const exampleStyle = createStyles({
+const exampleStyle = {
   section: {
     padding: "70px 0"
   },
@@ -15,6 +15,6 @@ const exampleStyle = createStyles({
   link: {
     textDecoration: "none"
   }
-});
+};
 
 export default exampleStyle;

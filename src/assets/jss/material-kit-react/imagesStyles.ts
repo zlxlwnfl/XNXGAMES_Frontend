@@ -1,6 +1,6 @@
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const imagesStyles = createStyles({
+const imagesStyles = {
   imgFluid: {
     maxWidth: "100%",
     height: "auto"
@@ -41,6 +41,6 @@ const imagesStyles = createStyles({
     left: "0",
     padding: "1.25rem"
   }
-});
+};
 
 export default imagesStyles;

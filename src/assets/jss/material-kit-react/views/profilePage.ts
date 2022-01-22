@@ -1,9 +1,9 @@
 import { container, title } from "../../material-kit-react";
 
 import imagesStyle from "../imagesStyles";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const profilePageStyle = createStyles({
+const profilePageStyle = {
   container,
   profile: {
     textAlign: "center",
@@ -58,6 +58,6 @@ const profilePageStyle = createStyles({
     margin: "20px auto 50px auto",
     textAlign: "center"
   }
-})
+};
 
 export default profilePageStyle;

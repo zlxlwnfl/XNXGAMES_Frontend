@@ -1,9 +1,9 @@
 import React from "react";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
+// @mui/material components
+import useClasses from "../../../hooks/useClasses";
+// @mui/icons-material
 
 // core components
 import GridContainer from "../../../components/Grid/GridContainer";
@@ -15,25 +15,25 @@ import profile from "../../../assets/img/profile.jpg";
 
 import styles from "../../../assets/jss/material-kit-react/views/componentsSections/exampleStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function SectionExamples() {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   return (
-    <div className={classes.section}>
-      <div className={classes.container}>
+    <div className={(classes as any).section}>
+      <div className={(classes as any).container}>
         <GridContainer justifyContent="center">
           <GridItem xs={12} sm={12} md={6}>
-            <Link to="landing-page" className={classes.link}>
+            <Link to="landing-page" className={(classes as any).link}>
               <img
                 src={landing}
                 alt="..."
                 className={
-                  classes.imgRaised +
+                  (classes as any).imgRaised +
                   " " +
-                  classes.imgRounded +
+                  (classes as any).imgRounded +
                   " " +
-                  classes.imgFluid
+                  (classes as any).imgFluid
                 }
               />
               <Button color="primary" size="lg" simple>
@@ -42,16 +42,16 @@ export default function SectionExamples() {
             </Link>
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
-            <Link to="profile-page" className={classes.link}>
+            <Link to="profile-page" className={(classes as any).link}>
               <img
                 src={profile}
                 alt="..."
                 className={
-                  classes.imgRaised +
+                  (classes as any).imgRaised +
                   " " +
-                  classes.imgRounded +
+                  (classes as any).imgRounded +
                   " " +
-                  classes.imgFluid
+                  (classes as any).imgFluid
                 }
               />
               <Button color="primary" size="lg" simple>

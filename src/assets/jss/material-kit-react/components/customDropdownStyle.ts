@@ -13,10 +13,10 @@ import {
   roseColor,
   roseBoxShadow
 } from "../../material-kit-react";
+import { Theme } from "@emotion/react";
 
-import { Theme, createStyles } from '@material-ui/core/styles';
 
-const customDropdownStyle = (theme: Theme) => createStyles({
+const customDropdownStyle = (theme: Theme) => ({
   popperClose: {
     pointerEvents: "none"
   },
@@ -40,7 +40,7 @@ const customDropdownStyle = (theme: Theme) => createStyles({
   },
   popperResponsive: {
     zIndex: 1200,
-    [theme.breakpoints.down("sm")]: {
+    [(theme as any).breakpoints.down("sm")]: {
       zIndex: 1640,
       position: "static",
       float: "none",

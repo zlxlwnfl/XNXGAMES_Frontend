@@ -5,9 +5,9 @@ import {
   infoCardHeader,
   primaryCardHeader
 } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const cardHeaderStyle = createStyles({
+const cardHeaderStyle = {
   cardHeader: {
     borderRadius: "3px",
     padding: "1rem 15px",
@@ -26,6 +26,6 @@ const cardHeaderStyle = createStyles({
   dangerCardHeader,
   infoCardHeader,
   primaryCardHeader
-});
+};
 
 export default cardHeaderStyle;

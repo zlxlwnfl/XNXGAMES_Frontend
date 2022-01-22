@@ -3,10 +3,10 @@ import React from "react";
 import classNames from "classnames";
 
 // material-ui components
-import { makeStyles } from "@material-ui/core/styles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Icon from "@material-ui/core/Icon";
+import useClasses from "../../hooks/useClasses";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Icon from "@mui/material/Icon";
 // core components
 import Card from "../Card/Card";
 import CardBody from "../Card/CardBody";
@@ -14,7 +14,7 @@ import CardHeader from "../Card/CardHeader";
 
 import styles from "../../assets/jss/material-kit-react/components/customTabsStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function CustomTabs(props: any) {
   const [value, setValue] = React.useState(0);
@@ -22,11 +22,11 @@ export default function CustomTabs(props: any) {
   const handleChange = (event: any, value: number) => {
     setValue(value);
   };
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const { headerColor, plainTabs, tabs, title, rtlActive } = props;
   const cardTitle = classNames({
-    [classes.cardTitle]: true,
-    [classes.cardTitleRTL]: rtlActive
+    [(classes as any).cardTitle]: true,
+    [(classes as any).cardTitleRTL]: rtlActive
   });
   return (
     <Card plain={plainTabs}>
@@ -36,8 +36,8 @@ export default function CustomTabs(props: any) {
           value={value}
           onChange={handleChange}
           classes={{
-            root: classes.tabsRoot,
-            indicator: classes.displayNone
+            root: (classes as any).tabsRoot,
+            indicator: (classes as any).displayNone
           }}
         >
           {tabs.map((prop: any, key: any) => {
@@ -55,10 +55,10 @@ export default function CustomTabs(props: any) {
             return (
               <Tab
                 classes={{
-                  root: classes.tabRootButton,
-                  //label: classes.tabLabel,
-                  selected: classes.tabSelected,
-                  wrapper: classes.tabWrapper
+                  root: (classes as any).tabRootButton,
+                  //label: (classes as any).tabLabel,
+                  selected: (classes as any).tabSelected,
+                  wrapped: (classes as any).tabWrapper
                 }}
                 key={key}
                 label={prop.tabName}

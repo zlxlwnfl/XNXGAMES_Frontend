@@ -1,7 +1,7 @@
 import { container } from "../../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const carouselStyle = createStyles({
+const carouselStyle = {
   section: {
     padding: "70px 0"
   },
@@ -10,6 +10,6 @@ const carouselStyle = createStyles({
     marginLeft: "auto !important",
     marginRight: "auto !important"
   }
-});
+};
 
 export default carouselStyle;

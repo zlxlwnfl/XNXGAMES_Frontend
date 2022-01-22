@@ -1,6 +1,6 @@
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const tooltipsStyle = createStyles({
+const tooltipsStyle = {
   tooltip: {
     padding: "10px 15px",
     minWidth: "130px",
@@ -26,6 +26,6 @@ const tooltipsStyle = createStyles({
     whiteSpace: "normal",
     lineBreak: "auto"
   }
-});
+};
 
 export default tooltipsStyle;

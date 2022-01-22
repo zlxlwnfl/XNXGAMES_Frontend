@@ -1,4 +1,4 @@
-import { createStyles, Theme } from '@material-ui/core/styles';
+// import { Theme } from '@mui/material/styles';
 import {
   roseColor,
   primaryColor,
@@ -7,8 +7,9 @@ import {
   warningColor,
   dangerColor
 } from "../../material-kit-react";
+import { Theme } from "@emotion/react";
 
-const navPillsStyle = (theme: Theme) => createStyles({
+const navPillsStyle = (theme: Theme) => ({
   root: {
     marginTop: "20px",
     paddingLeft: "0",
@@ -23,7 +24,7 @@ const navPillsStyle = (theme: Theme) => createStyles({
     color: "inherit"
   },
   flexContainer: {
-    [theme.breakpoints.down("xs")]: {
+    [(theme as any).breakpoints.down("xs")]: {
       display: "flex",
       flexWrap: "wrap"
     }

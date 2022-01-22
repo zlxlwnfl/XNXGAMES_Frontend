@@ -1,9 +1,9 @@
 import { container, title } from "../../../material-kit-react";
 
 import imagesStyles from "../../imagesStyles";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const typographyStyle = createStyles({
+const typographyStyle = {
   section: {
     padding: "70px 0"
   },
@@ -41,6 +41,6 @@ const typographyStyle = createStyles({
     marginLeft: "auto !important"
   },
   ...imagesStyles
-});
+};
 
 export default typographyStyle;

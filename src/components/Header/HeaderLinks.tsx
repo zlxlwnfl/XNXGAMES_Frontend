@@ -1,18 +1,18 @@
 /*eslint-disable*/
 import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
 
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
+// @mui/material components
+import useClasses from "../../hooks/useClasses";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Tooltip from "@mui/material/Tooltip";
 
-// @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+// @mui/icons-material
+import { Apps, CloudDownload } from "@mui/icons-material";
 
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown";
@@ -20,46 +20,46 @@ import Button from "../CustomButtons/Button";
 
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function HeaderLinks(props: any) {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   return (
-    <List className={classes.list}>
-      <ListItem className={classes.listItem}>
+    <List className={(classes as any).list}>
+      <ListItem className={(classes as any).listItem}>
         <CustomDropdown
           noLiPadding
           buttonText="Components"
           buttonProps={{
-            className: classes.navLink,
+            className: (classes as any).navLink,
             color: "transparent"
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Link to="/" className={(classes as any).dropdownLink}>
               All components
             </Link>,
             <a
               href="https://creativetimofficial.github.io/material-kit-react/#/documentation?ref=mkr-navbar"
               target="_blank"
-              className={classes.dropdownLink}
+              className={(classes as any).dropdownLink}
             >
               Documentation
             </a>
           ]}
         />
       </ListItem>
-      <ListItem className={classes.listItem}>
+      <ListItem className={(classes as any).listItem}>
         <Button
           href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
           color="transparent"
           target="_blank"
-          className={classes.navLink}
+          className={(classes as any).navLink}
         >
-          <CloudDownload className={classes.icons} /> Download
+          <CloudDownload className={(classes as any).icons} /> Download
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      <ListItem className={(classes as any).listItem}>
         {/*<Tooltip title="Delete">
           <IconButton aria-label="Delete">
             <DeleteIcon />
@@ -69,49 +69,49 @@ export default function HeaderLinks(props: any) {
           id="instagram-twitter"
           title="Follow us on twitter"
           placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
+          classes={{ tooltip: (classes as any).tooltip }}
         >
           <Button
             href="https://twitter.com/CreativeTim?ref=creativetim"
             target="_blank"
             color="transparent"
-            className={classes.navLink}
+            className={(classes as any).navLink}
           >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
+            <i className={(classes as any).socialIcons + " fab fa-twitter"} />
           </Button>
         </Tooltip>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      <ListItem className={(classes as any).listItem}>
         <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
           placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
+          classes={{ tooltip: (classes as any).tooltip }}
         >
           <Button
             color="transparent"
             href="https://www.facebook.com/CreativeTim?ref=creativetim"
             target="_blank"
-            className={classes.navLink}
+            className={(classes as any).navLink}
           >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
+            <i className={(classes as any).socialIcons + " fab fa-facebook"} />
           </Button>
         </Tooltip>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      <ListItem className={(classes as any).listItem}>
         <Tooltip
           id="instagram-tooltip"
           title="Follow us on instagram"
           placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
+          classes={{ tooltip: (classes as any).tooltip }}
         >
           <Button
             color="transparent"
             href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
             target="_blank"
-            className={classes.navLink}
+            className={(classes as any).navLink}
           >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
+            <i className={(classes as any).socialIcons + " fab fa-instagram"} />
           </Button>
         </Tooltip>
       </ListItem>

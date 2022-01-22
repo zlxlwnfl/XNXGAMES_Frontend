@@ -1,8 +1,8 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+// @mui/material components
+import useClasses from "../../../hooks/useClasses";
 
-// @material-ui/icons
+// @mui/icons-material
 
 // core components
 import GridContainer from "../../../components/Grid/GridContainer";
@@ -12,16 +12,16 @@ import Button from "../../../components/CustomButtons/Button";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/workStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function WorkSection() {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   return (
-    <div className={classes.section}>
+    <div className={(classes as any).section}>
       <GridContainer justifyContent="center">
         <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
-          <h4 className={classes.description}>
+          <h2 className={(classes as any).title}>Work with us</h2>
+          <h4 className={(classes as any).description}>
             Divide details about your product or agency work into parts. Write a
             few lines about each one and contact us about any further
             collaboration. We will responde get back to you in a couple of
@@ -52,7 +52,7 @@ export default function WorkSection() {
                 id="message"
                 formControlProps={{
                   fullWidth: true,
-                  className: classes.textArea
+                  className: (classes as any).textArea
                 }}
                 inputProps={{
                   multiline: true,

@@ -1,11 +1,11 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import Icon from "@material-ui/core/Icon";
-// @material-ui/icons
-import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
+// @mui/material components
+import useClasses from "../../hooks/useClasses";
+import InputAdornment from "@mui/material/InputAdornment";
+import Icon from "@mui/material/Icon";
+// @mui/icons-material
+import Email from "@mui/icons-material/Email";
+import People from "@mui/icons-material/People";
 // core components
 import Header from "../../components/Header/Header";
 import HeaderLinks from "../../components/Header/HeaderLinks";
@@ -25,14 +25,14 @@ import image from "../../assets/img/bg7.jpg";
 
 const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
-const useStyles = makeStyles(styles);
+
 
 export default function LoginPage(props: any) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const { ...rest } = props;
   return (
     <div>
@@ -44,21 +44,21 @@ export default function LoginPage(props: any) {
         {...rest}
       />
       <div
-        className={classes.pageHeader}
+        className={(classes as any).pageHeader}
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
           backgroundPosition: "top center"
         }}
       >
-        <div className={classes.container}>
+        <div className={(classes as any).container}>
           <GridContainer justifyContent="center">
             <GridItem xs={12} sm={12} md={4}>
-              <Card className={getKeyValue(classes)(cardAnimaton as (keyof typeof styles))}>
-                <form className={classes.form}>
-                  <CardHeader color="primary" className={classes.cardHeader}>
+              <Card className={getKeyValue(classes as any)(cardAnimaton as (keyof typeof styles))}>
+                <form className={(classes as any).form}>
+                  <CardHeader color="primary" className={(classes as any).cardHeader}>
                     <h4>Login</h4>
-                    <div className={classes.socialLine}>
+                    <div className={(classes as any).socialLine}>
                       <Button
                         justIcon
                         href="#pablo"
@@ -88,7 +88,7 @@ export default function LoginPage(props: any) {
                       </Button>
                     </div>
                   </CardHeader>
-                  <p className={classes.divider}>Or Be Classical</p>
+                  <p className={(classes as any).divider}>Or Be Classical</p>
                   <CardBody>
                     <CustomInput
                       labelText="First Name..."
@@ -100,7 +100,7 @@ export default function LoginPage(props: any) {
                         type: "text",
                         endAdornment: (
                           <InputAdornment position="end">
-                            <People className={classes.inputIconsColor} />
+                            <People className={(classes as any).inputIconsColor} />
                           </InputAdornment>
                         )
                       }}
@@ -115,7 +115,7 @@ export default function LoginPage(props: any) {
                         type: "email",
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Email className={classes.inputIconsColor} />
+                            <Email className={(classes as any).inputIconsColor} />
                           </InputAdornment>
                         )
                       }}
@@ -130,7 +130,7 @@ export default function LoginPage(props: any) {
                         type: "password",
                         endAdornment: (
                           <InputAdornment position="end">
-                            <Icon className={classes.inputIconsColor}>
+                            <Icon className={(classes as any).inputIconsColor}>
                               lock_outline
                             </Icon>
                           </InputAdornment>
@@ -139,7 +139,7 @@ export default function LoginPage(props: any) {
                       }}
                     />
                   </CardBody>
-                  <CardFooter className={classes.cardFooter}>
+                  <CardFooter className={(classes as any).cardFooter}>
                     <Button simple color="primary" size="lg">
                       Get started
                     </Button>

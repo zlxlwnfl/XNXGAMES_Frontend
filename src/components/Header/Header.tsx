@@ -1,25 +1,25 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
-import Drawer from "@material-ui/core/Drawer";
-// @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
+// @mui/material components
+import useClasses from "../../hooks/useClasses";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import Hidden from "@mui/material/Hidden";
+import Drawer from "@mui/material/Drawer";
+// @mui/icons-material
+import Menu from "@mui/icons-material/Menu";
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 
 const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
-const useStyles = makeStyles(styles);
+
 
 export default function Header(props: any) {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
@@ -40,32 +40,32 @@ export default function Header(props: any) {
     if (windowsScrollTop > changeColorOnScroll.height) {
       document.body
         .getElementsByTagName("header")[0]
-        .classList.remove(getKeyValue(classes)(color));
+        .classList.remove(getKeyValue(classes as any)(color));
       document.body
         .getElementsByTagName("header")[0]
-        .classList.add(getKeyValue(classes)(changeColorOnScroll.color));
+        .classList.add(getKeyValue(classes as any)(changeColorOnScroll.color));
     } else {
       document.body
         .getElementsByTagName("header")[0]
-        .classList.add(getKeyValue(classes)(color));
+        .classList.add(getKeyValue(classes as any)(color));
       document.body
         .getElementsByTagName("header")[0]
-        .classList.remove(getKeyValue(classes)(changeColorOnScroll.color));
+        .classList.remove(getKeyValue(classes as any)(changeColorOnScroll.color));
     }
   };
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
-    [classes.appBar]: true,
-    [getKeyValue(classes)(color)]: color,
-    [classes.absolute]: absolute,
-    [classes.fixed]: fixed
+    [(classes as any).appBar]: true,
+    [getKeyValue(classes as any)(color)]: color,
+    [(classes as any).absolute]: absolute,
+    [(classes as any).fixed]: fixed
   });
-  const brandComponent = <Button className={classes.title}>{brand}</Button>;
+  const brandComponent = <Button className={(classes as any).title}>{brand}</Button>;
   return (
     <AppBar className={appBarClasses}>
-      <Toolbar className={classes.container}>
+      <Toolbar className={(classes as any).container}>
         {leftLinks !== undefined ? brandComponent : null}
-        <div className={classes.flex}>
+        <div className={(classes as any).flex}>
           {leftLinks !== undefined ? (
             <Hidden smDown implementation="css">
               {leftLinks}
@@ -93,11 +93,11 @@ export default function Header(props: any) {
           anchor={"right"}
           open={mobileOpen}
           classes={{
-            paper: classes.drawerPaper
+            paper: (classes as any).drawerPaper
           }}
           onClose={handleDrawerToggle}
         >
-          <div className={classes.appResponsive}>
+          <div className={(classes as any).appResponsive}>
             {leftLinks}
             {rightLinks}
           </div>

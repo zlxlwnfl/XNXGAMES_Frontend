@@ -1,6 +1,6 @@
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const popoverStyles = createStyles({
+const popoverStyles = {
   popover: {
     padding: "0",
     boxShadow:
@@ -44,6 +44,6 @@ const popoverStyles = createStyles({
     lineHeight: "1.4",
     color: "#555"
   }
-});
+};
 
 export default popoverStyles;

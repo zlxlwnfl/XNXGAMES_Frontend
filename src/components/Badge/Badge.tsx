@@ -1,18 +1,18 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+// @mui/material components
+import useClasses from "../../hooks/useClasses";
 
 import styles from "../../assets/jss/material-kit-react/components/badgeStyle";
 
 const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
   
-const useStyles = makeStyles(styles);
+
 
 export default function Badge(props: any) {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const { color, children } = props;
   return (
-    <span className={classes.badge + " " + getKeyValue(classes)(color)}>
+    <span className={(classes as any).badge + " " + getKeyValue(classes as any)(color)}>
       {children}
     </span>
   );

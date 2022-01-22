@@ -1,23 +1,23 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
-import Check from "@material-ui/icons/Check";
-import Warning from "@material-ui/icons/Warning";
+// @mui/material components
+import useClasses from "../../../hooks/useClasses";
+// @mui/icons-material
+import Check from "@mui/icons-material/Check";
+import Warning from "@mui/icons-material/Warning";
 // core components
 import SnackbarContent from "../../../components/Snackbar/SnackbarContent";
 import Clearfix from "../../../components/Clearfix/Clearfix";
 
 import styles from "../../../assets/jss/material-kit-react/views/componentsSections/notificationsStyles";
 
-const useStyles = makeStyles(styles);
+
 
 export default function SectionNotifications() {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   return (
-    <div className={classes.section} id="notifications">
-      <div className={classes.container}>
-        <div className={classes.title}>
+    <div className={(classes as any).section} id="notifications">
+      <div className={(classes as any).container}>
+        <div className={(classes as any).title}>
           <h3>Notifications</h3>
         </div>
       </div>

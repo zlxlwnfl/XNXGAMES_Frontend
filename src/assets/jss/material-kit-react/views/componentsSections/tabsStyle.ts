@@ -1,7 +1,7 @@
 import { container } from  "../../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const tabsStyle = createStyles({
+const tabsStyle = {
   section: {
     background: "#EEEEEE",
     padding: "70px 0"
@@ -10,6 +10,6 @@ const tabsStyle = createStyles({
   textCenter: {
     textAlign: "center"
   }
-});
+};
 
 export default tabsStyle;

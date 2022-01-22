@@ -7,9 +7,9 @@ import {
   roseColor,
   grayColor
 } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const customLinearProgressStyle = createStyles({
+const customLinearProgressStyle = {
   root: {
     height: "4px",
     marginBottom: "20px",
@@ -60,6 +60,6 @@ const customLinearProgressStyle = createStyles({
   grayBackground: {
     background: "rgba(221, 221, 221, 0.2)"
   }
-});
+};
 
 export default customLinearProgressStyle;

@@ -1,6 +1,6 @@
-import { createStyles } from '@material-ui/core/styles';
 
-const modalStyle = createStyles({
+
+const modalStyle = {
   modal: {
     borderRadius: "6px"
   },
@@ -52,6 +52,6 @@ const modalStyle = createStyles({
     marginLeft: "auto",
     marginRight: "auto"
   }
-});
+};
 
 export default modalStyle;

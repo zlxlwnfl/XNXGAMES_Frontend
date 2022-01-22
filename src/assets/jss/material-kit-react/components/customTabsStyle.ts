@@ -1,6 +1,6 @@
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const customTabsStyle = createStyles({
+const customTabsStyle = {
   cardTitle: {
     float: "left",
     padding: "10px 10px 10px 0px",
@@ -55,6 +55,6 @@ const customTabsStyle = createStyles({
       letterSpacing: "normal !important"
     }
   }
-});
+};
 
 export default customTabsStyle;

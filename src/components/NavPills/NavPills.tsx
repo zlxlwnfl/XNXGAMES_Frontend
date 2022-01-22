@@ -3,10 +3,10 @@ import React from "react";
 import classNames from "classnames";
 import SwipeableViews from "react-swipeable-views";
 
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+// @mui/material components
+import useClasses from "../../hooks/useClasses";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 // core components
 import GridContainer from "../Grid/GridContainer";
@@ -16,7 +16,7 @@ import styles from "../../assets/jss/material-kit-react/components/navPillsStyle
 
 const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
-const useStyles = makeStyles(styles);
+
 
 export default function NavPills(props: any) {
   const [active, setActive] = React.useState(props.active);
@@ -26,19 +26,19 @@ export default function NavPills(props: any) {
   const handleChangeIndex = (index: any) => {
     setActive(index);
   };
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const { tabs, direction, color, horizontal, alignCenter } = props;
   const flexContainerClasses = classNames({
-    [classes.flexContainer]: true,
-    [classes.horizontalDisplay]: horizontal !== undefined
+    [(classes as any).flexContainer]: true,
+    [(classes as any).horizontalDisplay]: horizontal !== undefined
   });
   const tabButtons = (
     <Tabs
       classes={{
-        root: classes.root,
-        fixed: classes.fixed,
+        root: (classes as any).root,
+        fixed: (classes as any).fixed,
         flexContainer: flexContainerClasses,
-        indicator: classes.displayNone
+        indicator: (classes as any).displayNone
       }}
       value={active}
       onChange={handleChange}
@@ -47,12 +47,12 @@ export default function NavPills(props: any) {
       {tabs.map((prop: any, key: any) => {
         var icon: {[k: string]: any} = {};
         if (prop.tabIcon !== undefined) {
-          icon.icon = <prop.tabIcon className={classes.tabIcon} />;
+          icon.icon = <prop.tabIcon className={(classes as any).tabIcon} />;
         }
         const pillsClasses = classNames({
-          [classes.pills]: true,
-          [classes.horizontalPills]: horizontal !== undefined,
-          [classes.pillsWithIcons]: prop.tabIcon !== undefined
+          [(classes as any).pills]: true,
+          [(classes as any).horizontalPills]: horizontal !== undefined,
+          [(classes as any).pillsWithIcons]: prop.tabIcon !== undefined
         });
         return (
           <Tab
@@ -61,8 +61,8 @@ export default function NavPills(props: any) {
             {...icon}
             classes={{
               root: pillsClasses,
-              selected: getKeyValue(classes)(color),
-              wrapper: classes.tabWrapper
+              selected: getKeyValue(classes as any)(color),
+              wrapped: (classes as any).tabWrapper
             }}
           />
         );
@@ -70,7 +70,7 @@ export default function NavPills(props: any) {
     </Tabs>
   );
   const tabContent = (
-    <div className={classes.contentWrapper}>
+    <div className={(classes as any).contentWrapper}>
       <SwipeableViews
         axis={direction === "rtl" ? "x-reverse" : "x"}
         index={active}
@@ -78,7 +78,7 @@ export default function NavPills(props: any) {
       >
         {tabs.map((prop: any, key: any) => {
           return (
-            // <div className={classes.tabContent} key={key}>
+            // <div className={(classes as any).tabContent} key={key}>
             <div key={key}>
               {prop.tabContent}
             </div>

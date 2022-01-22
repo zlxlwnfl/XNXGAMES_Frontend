@@ -1,18 +1,18 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
+// @mui/material components
+import useClasses from "../../hooks/useClasses";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Input from "@mui/material/Input";
 
 import styles from "../../assets/jss/material-kit-react/components/customInputStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function CustomInput(props: any) {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const {
     formControlProps,
     labelText,
@@ -26,36 +26,36 @@ export default function CustomInput(props: any) {
   } = props;
 
   const labelClasses = classNames({
-    [" " + classes.labelRootError]: error,
-    [" " + classes.labelRootSuccess]: success && !error
+    [" " + (classes as any).labelRootError]: error,
+    [" " + (classes as any).labelRootSuccess]: success && !error
   });
   const underlineClasses = classNames({
-    [classes.underlineError]: error,
-    [classes.underlineSuccess]: success && !error,
-    [classes.underline]: true,
-    [classes.whiteUnderline]: white
+    [(classes as any).underlineError]: error,
+    [(classes as any).underlineSuccess]: success && !error,
+    [(classes as any).underline]: true,
+    [(classes as any).whiteUnderline]: white
   });
   const marginTop = classNames({
     [inputRootCustomClasses]: inputRootCustomClasses !== undefined
   });
   const inputClasses = classNames({
-    [classes.input]: true,
-    [classes.whiteInput]: white
+    [(classes as any).input]: true,
+    [(classes as any).whiteInput]: white
   });
   var formControlClasses;
   if (formControlProps !== undefined) {
     formControlClasses = classNames(
       formControlProps.className,
-      classes.formControl
+      (classes as any).formControl
     );
   } else {
-    formControlClasses = classes.formControl;
+    formControlClasses = (classes as any).formControl;
   }
   return (
     <FormControl {...formControlProps} className={formControlClasses}>
       {labelText !== undefined ? (
         <InputLabel
-          className={classes.labelRoot + " " + labelClasses}
+          className={(classes as any).labelRoot + " " + labelClasses}
           htmlFor={id}
           {...labelProps}
         >
@@ -66,7 +66,7 @@ export default function CustomInput(props: any) {
         classes={{
           input: inputClasses,
           root: marginTop,
-          disabled: classes.disabled,
+          disabled: (classes as any).disabled,
           underline: underlineClasses
         }}
         id={id}

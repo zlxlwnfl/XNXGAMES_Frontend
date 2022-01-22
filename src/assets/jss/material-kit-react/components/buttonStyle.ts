@@ -7,9 +7,9 @@ import {
   warningColor,
   dangerColor
 } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const buttonStyle = createStyles({
+const buttonStyle = {
   button: {
     minHeight: "auto",
     minWidth: "auto",
@@ -320,6 +320,6 @@ const buttonStyle = createStyles({
       }
     }
   }
-});
+};
 
 export default buttonStyle;

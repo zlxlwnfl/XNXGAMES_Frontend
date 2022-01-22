@@ -7,9 +7,9 @@ import {
   dangerBoxShadow,
   container
 } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const snackbarContentStyle = createStyles({
+const snackbarContentStyle = {
   root: {
     ...defaultFont,
     position: "relative",
@@ -83,6 +83,6 @@ const snackbarContentStyle = createStyles({
     ...container,
     position: "relative"
   }
-});
+};
 
 export default snackbarContentStyle;

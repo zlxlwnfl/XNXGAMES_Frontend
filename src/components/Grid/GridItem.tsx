@@ -1,9 +1,10 @@
 import React from "react";
-// @material-ui/core components
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+// @mui/material components
+// import { Theme, makeStyles } from "@mui/material/styles";
+import useClasses from "../../hooks/useClasses";
+import Grid from "@mui/material/Grid";
 
-const styles = createStyles({
+const styles = {
   grid: {
     position: "relative",
     width: "100%",
@@ -12,15 +13,15 @@ const styles = createStyles({
     paddingLeft: "15px",
     flexBasis: "auto"
   }
-});
+};
 
-const useStyles = makeStyles(styles);
+
 
 export default function GridItem(props: any) {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const { children, className, ...rest } = props;
   return (
-    <Grid item {...rest} className={classes.grid + " " + className}>
+    <Grid item {...rest} className={(classes as any).grid + " " + className}>
       {children}
     </Grid>
   );

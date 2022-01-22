@@ -1,6 +1,6 @@
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const cardStyle = createStyles({
+const cardStyle = {
   card: {
     border: "0",
     marginBottom: "30px",
@@ -26,6 +26,6 @@ const cardStyle = createStyles({
   cardCarousel: {
     overflow: "hidden"
   }
-});
+};
 
 export default cardStyle;

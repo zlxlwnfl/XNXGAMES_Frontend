@@ -11,9 +11,9 @@ import {
   boxShadow,
   drawerWidth
 } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const headerStyle = createStyles({
+const headerStyle = {
   appBar: {
     display: "flex",
     border: "0",
@@ -148,6 +148,6 @@ const headerStyle = createStyles({
     paddingLeft: "0",
     ...transition
   }
-});
+};
 
 export default headerStyle;

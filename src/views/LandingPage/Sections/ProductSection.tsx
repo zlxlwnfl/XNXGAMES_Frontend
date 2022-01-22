@@ -1,11 +1,11 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+// @mui/material components
+import useClasses from "../../../hooks/useClasses";
 
-// @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
+// @mui/icons-material
+import Chat from "@mui/icons-material/Chat";
+import VerifiedUser from "@mui/icons-material/VerifiedUser";
+import Fingerprint from "@mui/icons-material/Fingerprint";
 // core components
 import GridContainer from "../../../components/Grid/GridContainer";
 import GridItem from "../../../components/Grid/GridItem";
@@ -13,16 +13,16 @@ import InfoArea from "../../../components/InfoArea/InfoArea";
 
 import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/productStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function ProductSection() {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   return (
-    <div className={classes.section}>
+    <div className={(classes as any).section}>
       <GridContainer justifyContent="center">
         <GridItem xs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Let{"'"}s talk product</h2>
-          <h5 className={classes.description}>
+          <h2 className={(classes as any).title}>Let{"'"}s talk product</h2>
+          <h5 className={(classes as any).description}>
             This is the paragraph where you can write more details about your
             product. Keep you user engaged by providing meaningful information.
             Remember that by this time, the user is curious, otherwise he wouldn

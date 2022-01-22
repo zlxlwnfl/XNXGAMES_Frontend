@@ -6,9 +6,9 @@ import {
   infoColor,
   roseColor
 } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const badgeStyle = createStyles({
+const badgeStyle = {
   badge: {
     marginRight: "3px",
     borderRadius: "12px",
@@ -44,6 +44,6 @@ const badgeStyle = createStyles({
   gray: {
     backgroundColor: "#6c757d"
   }
-});
+};
 
 export default badgeStyle;

@@ -3,9 +3,9 @@ import React from "react";
 import classNames from "classnames";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
+// @mui/material components
+import useClasses from "../../hooks/useClasses";
+// @mui/icons-material
 // core components
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -30,10 +30,10 @@ import SectionDownload from "./Sections/SectionDownload";
 
 import styles from "../../assets/jss/material-kit-react/views/components";
 
-const useStyles = makeStyles(styles);
+
 
 export default function Components(props: any) {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const { ...rest } = props;
   return (
     <div>      
@@ -49,12 +49,12 @@ export default function Components(props: any) {
         {...rest}
       />
       <Parallax image={require("../../assets/img/bg4.jpg")}>
-        <div className={classes.container}>
+        <div className={(classes as any).container}>
           <GridContainer>
             <GridItem>
-              <div className={classes.brand}>
-                <h1 className={classes.title}>Material Kit React.</h1>
-                <h3 className={classes.subtitle}>
+              <div className={(classes as any).brand}>
+                <h1 className={(classes as any).title}>Material Kit React.</h1>
+                <h3 className={(classes as any).subtitle}>
                   A Badass Material-UI Kit based on Material Design.
                 </h3>
               </div>
@@ -63,7 +63,7 @@ export default function Components(props: any) {
         </div>
       </Parallax>
 
-      <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={classNames((classes as any).main, (classes as any).mainRaised)}>
         <SectionBasics />
         <SectionNavbars />
         <SectionTabs />
@@ -74,8 +74,8 @@ export default function Components(props: any) {
         <SectionCarousel />
         <SectionCompletedExamples />
         <SectionLogin />
-        <GridItem md={12} className={classes.textCenter}>
-          <Link to={"/login-page"} className={classes.link}>
+        <GridItem md={12} className={(classes as any).textCenter}>
+          <Link to={"/login-page"} className={(classes as any).link}>
             <Button color="primary" size="lg" simple>
               View Login Page
             </Button>

@@ -1,10 +1,10 @@
 import React from "react";
 // react component for creating beautiful carousel
 import Carousel from "react-slick";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
-import LocationOn from "@material-ui/icons/LocationOn";
+// @mui/material components
+import useClasses from "../../../hooks/useClasses";
+// @mui/icons-material
+import LocationOn from "@mui/icons-material/LocationOn";
 // core components
 import GridContainer from "../../../components/Grid/GridContainer";
 import GridItem from "../../../components/Grid/GridItem";
@@ -16,10 +16,10 @@ import image3 from "../../../assets/img/bg3.jpg";
 
 import styles from "../../../assets/jss/material-kit-react/views/componentsSections/carouselStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function SectionCarousel() {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const settings = {
     dots: true,
     infinite: true,
@@ -29,10 +29,10 @@ export default function SectionCarousel() {
     autoplay: false
   };
   return (
-    <div className={classes.section}>
-      <div className={classes.container}>
+    <div className={(classes as any).section}>
+      <div className={(classes as any).container}>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={8} className={classes.marginAuto}>
+          <GridItem xs={12} sm={12} md={8} className={(classes as any).marginAuto}>
             <Card carousel>
               <Carousel {...settings}>
                 <div>

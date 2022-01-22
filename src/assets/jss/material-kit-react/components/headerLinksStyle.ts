@@ -1,8 +1,9 @@
 import { defaultFont } from "../../material-kit-react";
 import tooltip from "../tooltipsStyle";
-import { createStyles, Theme } from "@material-ui/core/styles";
+// import { Theme } from "@mui/material/styles";
+import { Theme } from "@emotion/react";
 
-const headerLinksStyle = (theme: Theme) => createStyles({
+const headerLinksStyle = (theme: Theme) => ({
   list: {
     ...defaultFont,
     fontSize: "14px",
@@ -21,7 +22,7 @@ const headerLinksStyle = (theme: Theme) => createStyles({
     width: "auto",
     margin: "0",
     padding: "0",
-    [theme.breakpoints.down("sm")]: {
+    [(theme as any).breakpoints.down("sm")]: {
       width: "100%",
       "&:after": {
         width: "calc(100% - 30px)",
@@ -52,7 +53,7 @@ const headerLinksStyle = (theme: Theme) => createStyles({
       color: "inherit",
       background: "rgba(200, 200, 200, 0.2)"
     },
-    [theme.breakpoints.down("sm")]: {
+    [(theme as any).breakpoints.down("sm")]: {
       width: "calc(100% - 30px)",
       marginLeft: "15px",
       marginBottom: "8px",

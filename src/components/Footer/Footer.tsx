@@ -3,63 +3,63 @@ import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // material-ui core components
-import { List, ListItem } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { List, ListItem } from "@mui/material";
+import useClasses from "../../hooks/useClasses";
 
-// @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
+// @mui/icons-material
+import Favorite from "@mui/icons-material/Favorite";
 
 import styles from "../../assets/jss/material-kit-react/components/footerStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function Footer(props: any) {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const { whiteFont } = props;
   const footerClasses = classNames({
-    [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [(classes as any).footer]: true,
+    [(classes as any).footerWhiteFont]: whiteFont
   });
   const aClasses = classNames({
-    [classes.a]: true,
-    [classes.footerWhiteFont]: whiteFont
+    [(classes as any).a]: true,
+    [(classes as any).footerWhiteFont]: whiteFont
   });
   return (
     <footer className={footerClasses}>
-      <div className={classes.container}>
-        <div className={classes.left}>
-          <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
+      <div className={(classes as any).container}>
+        <div className={(classes as any).left}>
+          <List className={(classes as any).list}>
+            <ListItem className={(classes as any).inlineBlock}>
               <a
                 href="https://www.creative-tim.com/?ref=mkr-footer"
-                className={classes.block}
+                className={(classes as any).block}
                 target="_blank"
               >
                 Creative Tim
               </a>
             </ListItem>
-            <ListItem className={classes.inlineBlock}>
+            <ListItem className={(classes as any).inlineBlock}>
               <a
                 href="https://www.creative-tim.com/presentation?ref=mkr-footer"
-                className={classes.block}
+                className={(classes as any).block}
                 target="_blank"
               >
                 About us
               </a>
             </ListItem>
-            <ListItem className={classes.inlineBlock}>
+            <ListItem className={(classes as any).inlineBlock}>
               <a
                 href="http://blog.creative-tim.com/?ref=mkr-footer"
-                className={classes.block}
+                className={(classes as any).block}
                 target="_blank"
               >
                 Blog
               </a>
             </ListItem>
-            <ListItem className={classes.inlineBlock}>
+            <ListItem className={(classes as any).inlineBlock}>
               <a
                 href="https://www.creative-tim.com/license?ref=mkr-footer"
-                className={classes.block}
+                className={(classes as any).block}
                 target="_blank"
               >
                 Licenses
@@ -67,9 +67,9 @@ export default function Footer(props: any) {
             </ListItem>
           </List>
         </div>
-        <div className={classes.right}>
+        <div className={(classes as any).right}>
           &copy; {new Date().getFullYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+          <Favorite className={(classes as any).icon} /> by{" "}
           <a
             href="https://www.creative-tim.com?ref=mkr-footer"
             className={aClasses}

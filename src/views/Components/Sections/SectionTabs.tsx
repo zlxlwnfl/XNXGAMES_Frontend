@@ -1,11 +1,11 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+// @mui/material components
+import useClasses from "../../../hooks/useClasses";
 
-// @material-ui/icons
-import Face from "@material-ui/icons/Face";
-import Chat from "@material-ui/icons/Chat";
-import Build from "@material-ui/icons/Build";
+// @mui/icons-material
+import Face from "@mui/icons-material/Face";
+import Chat from "@mui/icons-material/Chat";
+import Build from "@mui/icons-material/Build";
 // core components
 import GridContainer from "../../../components/Grid/GridContainer";
 import GridItem from "../../../components/Grid/GridItem";
@@ -13,13 +13,13 @@ import CustomTabs from "../../../components/CustomTabs/CustomTabs";
 
 import styles from "../../../assets/jss/material-kit-react/views/componentsSections/tabsStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function SectionTabs() {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   return (
-    <div className={classes.section}>
-      <div className={classes.container}>
+    <div className={(classes as any).section}>
+      <div className={(classes as any).container}>
         <div id="nav-tabs">
           <h3>Navigation Tabs</h3>
           <GridContainer>
@@ -34,7 +34,7 @@ export default function SectionTabs() {
                     tabName: "Profile",
                     tabIcon: Face,
                     tabContent: (
-                      <p className={classes.textCenter}>
+                      <p className={(classes as any).textCenter}>
                         I think that’s a responsibility that I have, to push
                         possibilities, to show people, this is the level that
                         things could be at. So when you get something that has
@@ -50,7 +50,7 @@ export default function SectionTabs() {
                     tabName: "Messages",
                     tabIcon: Chat,
                     tabContent: (
-                      <p className={classes.textCenter}>
+                      <p className={(classes as any).textCenter}>
                         I think that’s a responsibility that I have, to push
                         possibilities, to show people, this is the level that
                         things could be at. I will be the leader of a company
@@ -66,7 +66,7 @@ export default function SectionTabs() {
                     tabName: "Settings",
                     tabIcon: Build,
                     tabContent: (
-                      <p className={classes.textCenter}>
+                      <p className={(classes as any).textCenter}>
                         think that’s a responsibility that I have, to push
                         possibilities, to show people, this is the level that
                         things could be at. So when you get something that has
@@ -92,7 +92,7 @@ export default function SectionTabs() {
                   {
                     tabName: "Home",
                     tabContent: (
-                      <p className={classes.textCenter}>
+                      <p className={(classes as any).textCenter}>
                         I think that’s a responsibility that I have, to push
                         possibilities, to show people, this is the level that
                         things could be at. So when you get something that has
@@ -107,7 +107,7 @@ export default function SectionTabs() {
                   {
                     tabName: "Updates",
                     tabContent: (
-                      <p className={classes.textCenter}>
+                      <p className={(classes as any).textCenter}>
                         I think that’s a responsibility that I have, to push
                         possibilities, to show people, this is the level that
                         things could be at. I will be the leader of a company
@@ -122,7 +122,7 @@ export default function SectionTabs() {
                   {
                     tabName: "History",
                     tabContent: (
-                      <p className={classes.textCenter}>
+                      <p className={(classes as any).textCenter}>
                         think that’s a responsibility that I have, to push
                         possibilities, to show people, this is the level that
                         things could be at. So when you get something that has

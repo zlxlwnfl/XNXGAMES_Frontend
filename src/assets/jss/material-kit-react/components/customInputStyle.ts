@@ -4,9 +4,9 @@ import {
   successColor,
   defaultFont
 } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const customInputStyle = createStyles({
+const customInputStyle = {
   disabled: {
     "&:before": {
       borderColor: "transparent !important"
@@ -85,6 +85,6 @@ const customInputStyle = createStyles({
       opacity: "1"
     }
   }
-});
+};
 
 export default customInputStyle;

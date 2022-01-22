@@ -1,7 +1,7 @@
 import { title } from "../../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const workStyle = createStyles({
+const workStyle = {
   section: {
     padding: "70px 0"
   },
@@ -24,6 +24,6 @@ const workStyle = createStyles({
     marginRight: "15px",
     marginLeft: "15px"
   }
-});
+};
 
 export default workStyle;

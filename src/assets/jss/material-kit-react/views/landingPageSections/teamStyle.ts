@@ -1,8 +1,8 @@
 import { cardTitle, title } from "../../../material-kit-react";
 import imagesStyle from "../../imagesStyles";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const teamStyle = createStyles({
+const teamStyle = {
   section: {
     padding: "70px 0",
     textAlign: "center"
@@ -43,6 +43,6 @@ const teamStyle = createStyles({
   margin5: {
     margin: "5px"
   }
-});
+};
 
 export default teamStyle;

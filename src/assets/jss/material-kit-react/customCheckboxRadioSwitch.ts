@@ -4,9 +4,9 @@ import {
   roseColor,
   grayColor
 } from "../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const customCheckboxRadioSwitch = createStyles({
+const customCheckboxRadioSwitch = {
   checkRoot: {
     padding: "12px",
     "&:hover": {
@@ -176,6 +176,6 @@ const customCheckboxRadioSwitch = createStyles({
   switchRoot: {
     height: "48px"
   }
-});
+};
 
 export default customCheckboxRadioSwitch;

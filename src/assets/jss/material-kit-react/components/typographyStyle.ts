@@ -6,9 +6,9 @@ import {
   warningColor,
   dangerColor
 } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const typographyStyle = createStyles({
+const typographyStyle = {
   defaultFontStyle: {
     ...defaultFont,
     fontSize: "14px"
@@ -57,6 +57,6 @@ const typographyStyle = createStyles({
     lineHeight: "1",
     color: "#777"
   }
-});
+};
 
 export default typographyStyle;

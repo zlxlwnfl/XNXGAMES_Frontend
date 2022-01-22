@@ -1,7 +1,7 @@
 import { container, primaryColor } from "../../material-kit-react";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const footerStyle = createStyles({
+const footerStyle = {
   block: {
     color: "inherit",
     padding: "0.9375rem",
@@ -56,5 +56,5 @@ const footerStyle = createStyles({
     position: "relative",
     top: "3px"
   }
-});
+};
 export default footerStyle;

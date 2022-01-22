@@ -1,8 +1,9 @@
 import { container, title } from "../../../material-kit-react";
 import headerLinksStyle from "../../components/headerLinksStyle";
-import { createStyles, Theme } from "@material-ui/core";
+// import { Theme } from "@mui/material";
+import { Theme } from "@emotion/react";
 
-const navbarsStyle = (theme: Theme) => createStyles({
+const navbarsStyle = (theme: Theme) => ({
   section: {
     padding: "70px 0",
     paddingTop: "0"

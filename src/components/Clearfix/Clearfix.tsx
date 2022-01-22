@@ -1,9 +1,10 @@
 import React from "react";
 
 // mterial-ui components
-import { createStyles, makeStyles } from "@material-ui/core/styles";
+// import { Theme, makeStyles } from "@mui/material/styles";
+import useClasses from "../../hooks/useClasses";
 
-const styles = createStyles({
+const styles = {
   clearfix: {
     "&:after,&:before": {
       display: "table",
@@ -13,11 +14,11 @@ const styles = createStyles({
       clear: "both"
     }
   }
-});
+};
 
-const useStyles = makeStyles(styles);
+
 
 export default function Clearfix() {
-  const classes = useStyles();
-  return <div className={classes.clearfix} />;
+  const classes = useClasses(styles);
+  return <div className={(classes as any).clearfix} />;
 }

@@ -1,9 +1,9 @@
 import { container } from "../../../material-kit-react";
 
 import image from "../../../../img/sign.jpg";
-import { createStyles } from "@material-ui/core/styles";
+// import { Theme, useTheme } from "@emotion/react";
 
-const loginStyle = createStyles({
+const loginStyle = {
   section: {
     minHeight: "110vh",
     maxHeight: "1600px",
@@ -60,6 +60,6 @@ const loginStyle = createStyles({
   inputIconsColor: {
     color: "#495057"
   }
-});
+};
 
 export default loginStyle;

@@ -1,35 +1,35 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+// @mui/material components
+import useClasses from "../../hooks/useClasses";
 
 import styles from "../../assets/jss/material-kit-react/components/infoStyle";
 
 const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
-const useStyles = makeStyles(styles);
+
 
 export default function InfoArea(props: any) {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   const { title, description, iconColor, vertical } = props;
   const iconWrapper = classNames({
-    [classes.iconWrapper]: true,
-    [getKeyValue(classes)(iconColor)]: true,
-    [classes.iconWrapperVertical]: vertical
+    [(classes as any).iconWrapper]: true,
+    [getKeyValue(classes as any)(iconColor)]: true,
+    [(classes as any).iconWrapperVertical]: vertical
   });
   const iconClasses = classNames({
-    [classes.icon]: true,
-    [classes.iconVertical]: vertical
+    [(classes as any).icon]: true,
+    [(classes as any).iconVertical]: vertical
   });
   return (
-    <div className={classes.infoArea}>
+    <div className={(classes as any).infoArea}>
       <div className={iconWrapper}>
         <props.icon className={iconClasses} />
       </div>
-      <div className={classes.descriptionWrapper}>
-        <h4 className={classes.title}>{title}</h4>
-        <p className={classes.description}>{description}</p>
+      <div className={(classes as any).descriptionWrapper}>
+        <h4 className={(classes as any).title}>{title}</h4>
+        <p className={(classes as any).description}>{description}</p>
       </div>
     </div>
   );

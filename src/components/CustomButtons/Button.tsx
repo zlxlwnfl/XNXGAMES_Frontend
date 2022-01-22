@@ -2,9 +2,10 @@ import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
-// @material-ui/core components
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import Button from "@material-ui/core/Button";
+// @mui/material components
+// import makeStyles from "@mui/material/styles/makeStyles";
+import useClasses from "../../hooks/useClasses";
+import Button from "@mui/material/Button";
 
 // core components
 
@@ -12,9 +13,9 @@ import buttonStyle from "../../assets/jss/material-kit-react/components/buttonSt
 
 const getKeyValue = <T extends object, U extends keyof T>(obj: T) => (key: U) => obj[key];
 
-const makeComponentStyles = makeStyles(() => ({
-  ...buttonStyle
-}));
+// const makeComponentStyles = useClasses(() => ({
+//   ...buttonStyle
+// }));
 
 const RegularButton = React.forwardRef((props: any, ref) => {
   const {
@@ -32,19 +33,19 @@ const RegularButton = React.forwardRef((props: any, ref) => {
     ...rest
   } = props;
 
-  const classes = makeComponentStyles();
+  const classes = useClasses(buttonStyle);
 
   const btnClasses = classNames({
-    [classes.button]: true,
-    [getKeyValue(classes)(size)]: size,
-    [getKeyValue(classes)(color)]: color,
-    [classes.round]: round,
-    [classes.fullWidth]: fullWidth,
-    [classes.disabled]: disabled,
-    [classes.simple]: simple,
-    [classes.block]: block,
-    [classes.link]: link,
-    [classes.justIcon]: justIcon,
+    [(classes as any).button]: true,
+    [getKeyValue(classes as any)(size)]: size,
+    [getKeyValue(classes as any)(color)]: color,
+    [(classes as any).round]: round,
+    [(classes as any).fullWidth]: fullWidth,
+    [(classes as any).disabled]: disabled,
+    [(classes as any).simple]: simple,
+    [(classes as any).block]: block,
+    [(classes as any).link]: link,
+    [(classes as any).justIcon]: justIcon,
     [className]: className
   });
   return (
@@ -53,5 +54,7 @@ const RegularButton = React.forwardRef((props: any, ref) => {
     </Button>
   );
 });
+
+RegularButton.displayName = 'RegularButton';
 
 export default RegularButton;

@@ -1,8 +1,8 @@
 /*eslint-disable*/
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
+// @mui/material components
+import useClasses from "../../../hooks/useClasses";
+// @mui/icons-material
 // core components
 import GridContainer from "../../../components/Grid/GridContainer";
 import GridItem from "../../../components/Grid/GridItem";
@@ -10,14 +10,14 @@ import Button from "../../../components/CustomButtons/Button";
 
 import styles from "../../../assets/jss/material-kit-react/views/componentsSections/downloadStyle";
 
-const useStyles = makeStyles(styles);
+
 
 export default function SectionDownload() {
-  const classes = useStyles();
+  const classes = useClasses(styles);
   return (
-    <div className={classes.section}>
-      <div className={classes.container}>
-        <GridContainer className={classes.textCenter} justifyContent="center">
+    <div className={(classes as any).section}>
+      <div className={(classes as any).container}>
+        <GridContainer className={(classes as any).textCenter} justifyContent="center">
           <GridItem xs={12} sm={12} md={8}>
             <h2>Do you love this UI Kit?</h2>
             <h4>
@@ -48,7 +48,7 @@ export default function SectionDownload() {
         </GridContainer>
         <br />
         <br />
-        <GridContainer className={classes.textCenter} justifyContent="center">
+        <GridContainer className={(classes as any).textCenter} justifyContent="center">
           <GridItem xs={12} sm={12} md={8}>
             <h2>Want more?</h2>
             <h4>
@@ -83,22 +83,22 @@ export default function SectionDownload() {
             </Button>
           </GridItem>
         </GridContainer>
-        <div className={classes.textCenter + " " + classes.sharingArea}>
+        <div className={(classes as any).textCenter + " " + (classes as any).sharingArea}>
           <GridContainer justifyContent="center">
             <h3>Thank you for supporting us!</h3>
           </GridContainer>
           <Button color="twitter">
-            <i className={classes.socials + " fab fa-twitter"} /> Tweet
+            <i className={(classes as any).socials + " fab fa-twitter"} /> Tweet
           </Button>
           <Button color="facebook">
-            <i className={classes.socials + " fab fa-facebook-square"} /> Share
+            <i className={(classes as any).socials + " fab fa-facebook-square"} /> Share
           </Button>
           <Button color="google">
-            <i className={classes.socials + " fab fa-google-plus-g"} />
+            <i className={(classes as any).socials + " fab fa-google-plus-g"} />
             Share
           </Button>
           <Button color="github">
-            <i className={classes.socials + " fab fa-github"} /> Star
+            <i className={(classes as any).socials + " fab fa-github"} /> Star
           </Button>
         </div>
       </div>
