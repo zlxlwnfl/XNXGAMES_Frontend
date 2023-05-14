@@ -25,7 +25,7 @@ export const PostPage = (props: { frontMatter; mdxSource }) => {
   return (
     <div>
       <Header
-        brand="NextJS Material Kit"
+        brand="XNXGAMES"
         rightLinks={<HeaderLinks />}
         fixed
         color="white"

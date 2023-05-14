@@ -41,7 +41,7 @@ export default function BlogPage(props: { posts: PostType[] }) {
   return (
     <div>
       <Header
-        brand="NextJS Material Kit"
+        brand="XNXGAMES"
         rightLinks={<HeaderLinks />}
         fixed
         color="transparent"
